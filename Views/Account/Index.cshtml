@@ -1,0 +1,28 @@
+﻿@model ICollection<Key>
+@{
+    ViewData["Title"] = "Keys";
+}
+
+@if (Model != null)
+{
+
+    <a asp-controller="Account" asp-action="Create">Добавить Ключ</a>
+
+    @foreach (var el in Model)
+    {
+        <div class="alert alert-warning mt-3">
+            <b>Ключ: </b> @el.Keys<br />
+            <b>Зашифрованные данные: </b> @el.EncryptedData<br />
+
+        </div>
+    }
+}
+else
+{
+    <div class="alert alert-warning mt-3">
+        <p>Войдите в аккаунт</p>
+    </div>
+
+}
+<hr />
+
